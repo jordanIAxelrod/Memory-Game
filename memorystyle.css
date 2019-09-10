@@ -1,0 +1,128 @@
+body {
+  font-family: 'Oxygen', 'Open sans', sans-serif;
+}
+/*
+header here
+*/
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+  font: 2.5em 'Oxygen', 'Open sans', sans-serif;
+  margin: 0;
+}
+
+.game-stats {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 630px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.game-stats .stars {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fa-star.remove {
+  display: none;
+}
+
+.stars li {
+  display: inline;
+}
+.restart {
+  transition: transform .4s ease;
+}
+.restart:hover {
+  cursor: pointer;
+  transform: rotate(180deg);
+}
+/*
+main
+*/
+
+.row {
+  width: 630px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-between;
+  background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+  border-radius: 9px;
+  flex-wrap: wrap;
+}
+.game-won {
+  display: none;
+}
+
+.game-won.won {
+  display:block;
+  width: 100%;
+  text-align: center;
+  font-size: 3em;
+}
+.row.won {
+  display: none;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.card {
+  height: 130px;
+  width: 130px;
+  border-radius: 9px;
+  background: #2e3d49;
+  margin: 15px 12px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0;
+  color: #fff;
+  transition: transform .6s ease;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.card.open {
+  transform: rotateY(180deg);
+  background: #02b3e4;
+  cursor: default;
+}
+
+.card.show {
+  font-size: 35px;
+}
+
+.card.wrong {
+  transition: transform .2s ease;
+  transform-origin: bottom center;
+  transform: rotate(10deg);
+  background-color: #ff4719;
+}
+.card.back {
+  transition: transform .2s ease;
+  transform-origin: bottom center;
+  transform: rotate(0deg);
+}
+
+.card.match {
+  transition: transform .3s ease;
+  transform: scaleY(.7) scaleX(1.2);
+  background-color: #02ccba;
+}
+.card.match.return {
+  transform: scaleX(1) scaleY(1) rotateY(0);
+}
